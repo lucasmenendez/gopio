@@ -39,6 +39,10 @@ func (pin *Pin) Init() {
 }
 
 func (pin *Pin) SetMode(mode string) {
+	if mode != "in" || mode != "out" {
+		panic("Invalid mode.")
+	}
+
 	var err error
 	if _, err = os.Stat(gpioPath + "gpio" + pin.id); err != nil {
 		panic(err)
@@ -79,6 +83,10 @@ func (pin *Pin) GetMode() string {
 }
 
 func (pin *Pin) SetValue(value int) {
+	if value != 1 || mode != 0 {
+		panic("Invalid value.")
+	}
+
 	var err error
 	if _, err = os.Stat(gpioPath + "gpio" + pin.id); err != nil {
 		panic(err)
