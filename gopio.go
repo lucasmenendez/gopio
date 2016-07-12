@@ -39,7 +39,7 @@ func (pin *Pin) Init() {
 }
 
 func (pin *Pin) SetMode(mode string) {
-	if mode != "in" || mode != "out" {
+	if mode != "in" && mode != "out" {
 		panic("Invalid mode.")
 	}
 
@@ -83,7 +83,7 @@ func (pin *Pin) GetMode() string {
 }
 
 func (pin *Pin) SetValue(value int) {
-	if value != 1 || value != 0 {
+	if value != 1 && value != 0 {
 		panic("Invalid value.")
 	}
 
