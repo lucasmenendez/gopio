@@ -6,7 +6,7 @@ Simple golang GPIO library. Abstraction of [GPIO Sysfs Interface](https://www.ke
 #### gopio.NewPin(pin int)
 Return gpio pin selected struct.
 
-#### pin.Close((
+#### pin.Close()
 Unexport gpio.
 
 #### pin.SetMode(mode string)
