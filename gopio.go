@@ -40,6 +40,7 @@ func (pin *Pin) Init() {
 
 func (pin *Pin) Close() {
 	var err error
+	var file *os.File
 
 	if file, err = os.OpenFile(gpioPath+"unexport", os.O_APPEND|os.O_WRONLY, 0777); err != nil {
 		panic(err)
