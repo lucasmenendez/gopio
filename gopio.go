@@ -38,6 +38,20 @@ func (pin *Pin) Init() {
 	return
 }
 
+func (pin *Pin) Close() {
+	var err error
+
+	if file, err = os.OpenFile(gpioPath+"unexport", os.O_APPEND|os.O_WRONLY, 0777); err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	if _, err = file.WriteString(pin.id); err != nil {
+		panic(err)
+	}
+	return
+}
+
 func (pin *Pin) SetMode(mode string) {
 	if mode != "in" && mode != "out" {
 		panic("Invalid mode.")
