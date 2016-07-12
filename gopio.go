@@ -83,7 +83,7 @@ func (pin *Pin) GetMode() string {
 }
 
 func (pin *Pin) SetValue(value int) {
-	if value != 1 || mode != 0 {
+	if value != 1 || value != 0 {
 		panic("Invalid value.")
 	}
 
