@@ -3,7 +3,7 @@ Simple golang GPIO library. Abstraction of [GPIO Sysfs Interface](https://www.ke
 
 ## API Reference
 
-#### gopio.NewPin(pin int)
+#### gopio.New(pin int)
 Return gpio pin selected struct.
 
 #### pin.Close()

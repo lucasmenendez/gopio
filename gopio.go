@@ -13,12 +13,12 @@ type Pin struct {
 
 const gpioPath = "/sys/class/gpio/"
 
-func NewPin(id int) (error, *Pin) {
+func New(id int) (*Pin, error) {
 	pin := new(Pin)
 	pin.id = strconv.Itoa(id)
 
 	err := pin.Init()
-	return err, pin
+	return pin, err
 }
 
 func (pin *Pin) Init() error {
