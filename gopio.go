@@ -10,7 +10,9 @@ import (
 	"strings"
 )
 
+// Pin struct represents gpio abstraction with methods associated.
 type Pin struct {
+	Id int
 	id string
 }
 
@@ -18,6 +20,7 @@ const gpioPath string = "/sys/class/gpio"
 
 // New function initializes gpio by pin id
 func New(id int) (pin *Pin, e error) {
+	pin.Id = id
 	pin.id = strconv.Itoa(id)
 
 	return pin, pin.init()
