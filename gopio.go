@@ -12,7 +12,7 @@ import (
 
 // Pin struct represents gpio abstraction with methods associated.
 type Pin struct {
-	Id int
+	Id int // Pin id
 	id string
 }
 
