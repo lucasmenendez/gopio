@@ -20,6 +20,9 @@ const gpioPath string = "/sys/class/gpio"
 
 // New function initializes gpio by pin id.
 func New(id int) (pin *Pin, e error) {
+	var pinInstance Pin
+	pin = &pinInstance
+
 	pin.Id = id
 	pin.id = strconv.Itoa(id)
 
